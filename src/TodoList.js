@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import './TodoList.css';
 import TodoItem from './TodoItem';
 
 class TodoList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { todos: this.props.todos };
+    this.addItem = this.addItem.bind(this);
+  }
+
   addItem() {
-    console.log('stuff')
+    var todos = this.props.todos;
+    todos.push(ReactDOM.findDOMNode(this.refs.itemInput).value);
+    ReactDOM.findDOMNode(this.refs.itemInput).value = "";
+    localStorage.setItem('todos', JSON.stringify(todos));
+    this.setState({ todos: todos });
   }
 
   render() {
@@ -12,7 +23,7 @@ class TodoList extends Component {
       <div>
         <h1>Todos</h1>
         <ul>
-          {this.props.todos.map(function(todo, index){
+          {this.state.todos.map(function(todo, index){
             return <TodoItem key={index} todo={todo} />;
           })}
         </ul>
