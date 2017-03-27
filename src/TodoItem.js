@@ -14,7 +14,7 @@ class TodoItem extends Component {
   render() {
     return (
       <li className="todo-item">
-        {this.props.todo * 2}
+        {this.props.todo}
         <button
           className="delete-button"
           onClick={this.removeItem}>
