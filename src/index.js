@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import List from './List'
+import TodoList from './TodoList'
 import './index.css';
 
 ReactDOM.render(
   <div>
     <App />
-    <List />
+    <TodoList todos={[1,2,3,4,5]}/>
   </div>,
   document.getElementById('root')
 );
