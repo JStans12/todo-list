@@ -5,8 +5,8 @@ class TodoList extends Component {
   render() {
     return (
       <ul>
-        {this.props.todos.map(function(todo){
-          return <li>{todo}</li>;
+        {this.props.todos.map(function(todo, index){
+          return <li key={index}>{todo}</li>;
         })}
       </ul>
     );
