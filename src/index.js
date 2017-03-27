@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import TodoList from './TodoList'
 import './index.css';
 
+var todos = JSON.parse(localStorage.getItem('todos')) || [];
+
 ReactDOM.render(
-  <div>
-    <App />
-    <TodoList todos={[1,2,3,4,5]}/>
-  </div>,
+  <TodoList todos={todos}/>,
   document.getElementById('root')
 );
