@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './TodoList.css';
+import TodoItem from './TodoItem';
 
 class TodoList extends Component {
   render() {
@@ -8,7 +9,7 @@ class TodoList extends Component {
         <h1>Todos</h1>
         <ul>
           {this.props.todos.map(function(todo, index){
-            return <li key={index}>{todo}</li>;
+            return <TodoItem key={index} todo={todo} />;
           })}
         </ul>
       </div>
