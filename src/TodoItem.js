@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 import './TodoItem.css'
 
 class TodoItem extends Component {
-  removeItem() {
+  constructor(props) {
+    super(props);
+    this.removeItem = this.removeItem.bind(this);
+  }
 
+  removeItem() {
+    this.props.removeItem(this.props.id);
   }
 
   render() {

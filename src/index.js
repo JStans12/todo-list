@@ -6,6 +6,6 @@ import './index.css';
 var todos = JSON.parse(localStorage.getItem('todos')) || [];
 
 ReactDOM.render(
-  <TodoList todos={todos}/>,
+  <TodoList todos={todos} />,
   document.getElementById('root')
 );
