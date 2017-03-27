@@ -1,0 +1,7 @@
+.todo-item {
+  width: 100px;
+}
+
+.todo-item .delete-button {
+  float: right;
+}
