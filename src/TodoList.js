@@ -3,6 +3,10 @@ import './TodoList.css';
 import TodoItem from './TodoItem';
 
 class TodoList extends Component {
+  addItem() {
+    console.log('stuff')
+  }
+
   render() {
     return (
       <div>
@@ -12,6 +16,8 @@ class TodoList extends Component {
             return <TodoItem key={index} todo={todo} />;
           })}
         </ul>
+        <input type="text" ref="itemInput"></input>
+        <button onClick={this.addItem}>Add Item</button>
       </div>
     );
   }
